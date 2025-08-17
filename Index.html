@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script> <!-- icons -->
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1 class="headline">
+      Almost there !<br><br> On the Way to Better Solutions<br><span>Stay Tuned</span>
+    </h1>
+    
+    <!-- Tagline + Rocket -->
+    <div class="tagline-wrap">
+      <h2 class="tagline" id="tagline"></h2>
+      <span class="rocket"><i data-lucide="rocket"></i></span>
+    </div>
+
+    <!-- Icons -->
+    <div class="icons">
+      <div class="icon floating"><i data-lucide="graduation-cap"></i></div>
+      <div class="icon floating"><i data-lucide="book-open"></i></div>
+      <div class="icon floating"><i data-lucide="school"></i></div>
+      <div class="icon floating"><i data-lucide="rocket"></i></div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Animated Tagline (letter by letter with spaces)
+    const text = "# Unlocking Potential";
+    const tagline = document.getElementById("tagline");
+
+    [...text].forEach((letter, i) => {
+      const span = document.createElement("span");
+      span.textContent = letter === " " ? "\u00A0" : letter; // keep space visible
+      span.style.animationDelay = `${i * 0.1}s`;
+      tagline.appendChild(span);
+    });
+
+    // Show rocket after text finishes
+    const rocket = document.querySelector(".rocket");
+    const delay = text.length * 100; // total animation time
+    setTimeout(() => {
+      rocket.classList.add("launch");
+    }, delay + 300); // small buffer
+  </script>
+</body>
+</html>

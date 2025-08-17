@@ -1,0 +1,115 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Background */
+body {
+  background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 1;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+
+/* Headline */
+.headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  animation: fadeInDown 2s ease;
+}
+.headline span { color: #ffcc00; }
+
+/* Tagline Wrap */
+.tagline-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  gap: 10px;
+}
+
+/* Tagline (letter animation) */
+.tagline span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Rocket Styling */
+.rocket {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #ffcc00;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Rocket Launch Animation */
+.launch {
+  animation: rocketUp 2s forwards ease-in-out;
+}
+
+@keyframes rocketUp {
+  0% { opacity: 0; transform: translateY(20px) scale(0.8); }
+  50% { opacity: 1; transform: translateY(-10px) scale(1); }
+  100% { opacity: 1; transform: translateY(-60px) scale(1.2); }
+}
+
+/* Icons */
+.icons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.icon {
+  font-size: 60px;
+  color: #ffcc00;
+  opacity: 0.9;
+}
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+.floating:nth-child(2) { animation-delay: 0.5s; }
+.floating:nth-child(3) { animation-delay: 1s; }
+.floating:nth-child(4) { animation-delay: 1.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Headline animation */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
