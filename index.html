@@ -34,8 +34,8 @@
     // Initialize icons
     lucide.createIcons();
 
-    // Animated Tagline (letter by letter with spaces)
-    const text = "# Unlocking Potential";
+    // Animated Tagline (letter by letter with non-breaking space)
+    const text = "# Unlocking\u00A0Potential";  
     const tagline = document.getElementById("tagline");
 
     [...text].forEach((letter, i) => {
